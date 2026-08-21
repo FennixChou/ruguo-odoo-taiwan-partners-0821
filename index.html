@@ -1,0 +1,717 @@
+<title>Odoo 台灣官方合作夥伴深度盤點</title>
+<style>
+:root{
+  --bg:#F2ECDF; --surface:#FCFAF4; --surface-2:#F7F1E6; --ink:#22271F; --muted:#62665A;
+  --line:#E4DCCB; --primary:#34573B; --primary-strong:#274430; --primary-soft:rgba(52,87,59,.10);
+  --primary-line:rgba(52,87,59,.30); --clay:#8F6234; --warn:#96611B; --danger:#AF4636;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15170F; --surface:#1E2016; --surface-2:#24271B; --ink:#ECE9DE; --muted:#9D9B88;
+    --line:#2F3123; --primary:#9BC084; --primary-strong:#B4D49E; --primary-soft:rgba(155,192,132,.14);
+    --primary-line:rgba(155,192,132,.38); --clay:#CB9C6E; --warn:#E0AC5B; --danger:#E0806F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15170F; --surface:#1E2016; --surface-2:#24271B; --ink:#ECE9DE; --muted:#9D9B88;
+  --line:#2F3123; --primary:#9BC084; --primary-strong:#B4D49E; --primary-soft:rgba(155,192,132,.14);
+  --primary-line:rgba(155,192,132,.38); --clay:#CB9C6E; --warn:#E0AC5B; --danger:#E0806F;
+}
+*{box-sizing:border-box;}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Segoe UI","Microsoft JhengHei","PingFang TC","Noto Sans TC",system-ui,sans-serif;
+  line-height:1.75; margin:0; padding:44px 22px;
+}
+.wrap{max-width:1060px; margin:0 auto;}
+h1{font-size:1.7rem; font-weight:600; margin:0 0 6px; color:var(--ink);}
+h2{font-size:1.2rem; font-weight:600; margin:40px 0 14px; color:var(--primary-strong); border-bottom:1px solid var(--line); padding-bottom:8px;}
+h3{font-size:1.05rem; font-weight:600; margin:0 0 4px;}
+p{margin:0 0 10px;}
+.meta{color:var(--muted); font-size:.92rem; margin-bottom:2px;}
+.meta strong{color:var(--ink); font-weight:600;}
+a{color:var(--primary); text-decoration:none; border-bottom:1px solid var(--primary-line);}
+a:hover{color:var(--primary-strong); border-bottom-color:var(--primary-strong);}
+.tabular{font-variant-numeric:tabular-nums;}
+
+.callout{
+  background:var(--primary-soft); border:1px solid var(--primary-line); border-left:4px solid var(--primary);
+  border-radius:10px; padding:18px 20px; margin:22px 0;
+}
+.callout p{margin:0; color:var(--ink);}
+.callout .label{font-size:.76rem; letter-spacing:.05em; text-transform:uppercase; color:var(--primary-strong); font-weight:600; margin-bottom:6px; display:block;}
+
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0;}
+.stat-card{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:16px 18px; text-align:center;}
+.stat-card .num{font-size:1.9rem; font-weight:700; color:var(--primary-strong); font-variant-numeric:tabular-nums;}
+.stat-card .lbl{font-size:.86rem; color:var(--muted); margin-top:2px;}
+.stat-card.gold .num{color:var(--muted);}
+@media (max-width:640px){.stats{grid-template-columns:1fr;}}
+
+.table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:10px; margin:16px 0; background:var(--surface);}
+table{border-collapse:collapse; width:100%; min-width:720px; font-size:.92rem;}
+table.cases{min-width:640px;}
+thead th{
+  background:var(--surface-2); color:var(--muted); font-size:.76rem; letter-spacing:.05em; text-transform:uppercase;
+  text-align:left; padding:10px 12px; white-space:nowrap; border-bottom:1px solid var(--line);
+}
+tbody td{padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover{background:var(--surface-2);}
+td.num{font-variant-numeric:tabular-nums; text-align:center; white-space:nowrap;}
+tr.tier-silver td:first-child{border-left:3px solid var(--primary);}
+tr.tier-silver{background:var(--primary-soft);}
+
+.pill{display:inline-block; padding:3px 11px; border-radius:999px; font-size:.78rem; font-weight:600; letter-spacing:.02em;}
+.pill-silver{background:var(--primary-soft); color:var(--primary-strong); border:1px solid var(--primary-line);}
+.pill-ready{background:var(--surface-2); color:var(--muted); border:1px solid var(--line);}
+.pill-deep{background:var(--clay); color:#fff;}
+.pill-warn{background:transparent; color:var(--warn); border:1px solid var(--warn);}
+
+.cards{display:flex; flex-direction:column; gap:20px;}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px 24px;
+  scroll-margin-top:20px;
+}
+.card.deep{border-color:var(--primary-line); box-shadow:0 0 0 1px var(--primary-line) inset;}
+.card-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-bottom:6px;}
+.card-head h3{font-size:1.2rem; color:var(--ink);}
+.card-sub{color:var(--muted); font-size:.88rem; margin-bottom:14px;}
+.card-sub a{color:var(--muted); border-bottom:1px dotted var(--line);}
+.factgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:14px 0 18px;}
+.fact{background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:10px 12px;}
+.fact .k{font-size:.74rem; color:var(--muted); letter-spacing:.03em; text-transform:uppercase;}
+.fact .v{font-size:1rem; font-weight:600; margin-top:2px; font-variant-numeric:tabular-nums;}
+@media (max-width:700px){.factgrid{grid-template-columns:repeat(2,1fr);}}
+
+.card section{margin-bottom:16px;}
+.card section:last-of-type{margin-bottom:0;}
+.card .section-label{font-size:.76rem; letter-spacing:.05em; text-transform:uppercase; color:var(--primary); font-weight:600; margin-bottom:6px; display:block;}
+.card .body-text{color:var(--ink); font-size:.95rem; white-space:pre-line;}
+.card .caveat-box{background:var(--surface-2); border-left:3px solid var(--warn); border-radius:0 8px 8px 0; padding:12px 14px; font-size:.9rem; color:var(--muted);}
+
+details.src{margin-top:8px;}
+details.src summary{cursor:pointer; font-size:.82rem; color:var(--muted); user-select:none;}
+details.src ul{margin:8px 0 0; padding-left:18px; font-size:.82rem; color:var(--muted);}
+details.src li{margin-bottom:4px; word-break:break-all;}
+
+.verdict-box{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px 22px; margin-bottom:16px;}
+.verdict-box h4{margin:0 0 8px; color:var(--primary-strong); font-size:1rem;}
+ol.steps{padding-left:20px;}
+ol.steps li{margin-bottom:8px;}
+
+.disclaimer{
+  margin:40px 0 0; padding:16px 18px; border:1px solid var(--line); border-radius:10px;
+  background:var(--surface-2); color:var(--muted); font-size:.86rem;
+}
+footer.pagefoot{margin-top:30px; text-align:center; color:var(--muted); font-size:.82rem;}
+</style>
+
+<div class="wrap">
+
+<header>
+  <h1>Odoo 台灣官方合作夥伴深度盤點</h1>
+  <div class="meta">查證日：<strong>2026-08-21</strong>　｜　資料來源：Odoo 官方合作夥伴名錄（odoo.com/partners/country/taiwan-218）逐家 profile 頁＋各公司官網＋商工登記公示資料第三方查詢站，逐筆 WebFetch/Firecrawl 實抓</div>
+  <div class="meta">範圍：台灣 Odoo 官方名錄在列 16 家合作夥伴全員深度查證（其中 5 家列為重點深查對象）</div>
+</header>
+
+<div class="callout">
+  <span class="label">關鍵結論</span>
+  <p>台灣目前 <strong>沒有 Gold 級</strong> Odoo 官方合作夥伴，最高等級為 <strong>Silver（僅 3 家：一隅數位、Bankersrounding、AWT System）</strong>，其餘 13 家全部是官方合作等級最基礎的 <strong>Ready</strong> 級。若要找「有把關能力」的導入夥伴，這 3 家 Silver 是務實起點，非等到 Gold 出現才行動。</p>
+</div>
+
+<div class="stats">
+  <div class="stat-card"><div class="num tabular">3</div><div class="lbl">Silver 級</div></div>
+  <div class="stat-card"><div class="num tabular">13</div><div class="lbl">Ready 級</div></div>
+  <div class="stat-card gold"><div class="num tabular">0</div><div class="lbl">Gold 級</div></div>
+</div>
+
+<h2>總覽表</h2>
+<div class="table-wrap">
+<table>
+<thead><tr>
+  <th>公司</th><th>等級</th><th>地區</th><th>專長重點</th><th class="num">案例數</th><th class="num">認證專家</th><th>官網現況</th>
+</tr></thead>
+<tbody>
+<tr class="tier-silver"><td><a href="#corner-digit">一隅數位</a><br><a href="https://www.cornerdigit.com" target="_blank">cornerdigit.com</a></td><td><span class="pill pill-silver">Silver</span></td><td>新竹市北區</td><td>ERP導入＋GCP雲端部署＋MES產線整合</td><td class="num">20</td><td class="num">3</td><td>在營，Odoo 明確主力</td></tr>
+<tr class="tier-silver"><td><a href="#bankersrounding">Bankersrounding<br>肆捨陸入</a><br><a href="https://bankersrounding.com" target="_blank">bankersrounding.com</a></td><td><span class="pill pill-silver">Silver</span></td><td>台北市中正區（北中南駐點）</td><td>餐飲旅宿為主力＋零售，含室內設計/系統家具案例</td><td class="num">17</td><td class="num">3</td><td>在營，Odoo 明確主力</td></tr>
+<tr class="tier-silver"><td><a href="#awt-system">AWT System</a><br><a href="https://www.awt-system.com.tw" target="_blank">awt-system.com.tw</a></td><td><span class="pill pill-silver">Silver</span></td><td>台北市中山區（跨國五地）</td><td>大型客製化＋系統整合，39年老牌軟體商</td><td class="num">11</td><td class="num">未公開</td><td>在營，Odoo 明確（裸網域逾時，用 www）</td></tr>
+<tr><td><a href="#ai-chuang-dian">艾創點數位</a><br><a href="https://ideaxpress.biz" target="_blank">ideaxpress.biz</a></td><td><span class="pill pill-ready">Ready</span></td><td>台中市北區＋新竹竹北</td><td>雙品牌（鼎新TIPTOP/T100＋Odoo）系統整合，中小型製造業</td><td class="num">12</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#nc-design">NC Design<br>恩曦設計</a><br><a href="https://www.nc-crm.com" target="_blank">nc-crm.com</a></td><td><span class="pill pill-ready">Ready</span></td><td>新北市三重區</td><td>Salesforce 顧問老店，2026 年新增 Odoo 線（早期試水）</td><td class="num">5（可查證 0）</td><td class="num">未公開</td><td>早期試水，主業 Salesforce</td></tr>
+<tr><td><a href="#otra">又一科技</a><br><a href="https://otra-technology.com" target="_blank">otra-technology.com</a></td><td><span class="pill pill-ready">Ready</span></td><td>新北市板橋區</td><td>泛產業通用型導入，含 Odoo Studio 客製開發</td><td class="num">12</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#ipro">IPRO 網際家</a><br><a href="https://www.ipro.tw" target="_blank">ipro.tw</a></td><td><span class="pill pill-ready">Ready</span></td><td>新竹縣竹北市</td><td>RFID/行動化＋製造/生技，含資安/資料庫備援工程</td><td class="num">7</td><td class="num">3</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#cenoq">CENOQ<br>新諾資訊</a><br><a href="https://www.cenoq.com" target="_blank">cenoq.com</a></td><td><span class="pill pill-ready">Ready</span></td><td>台北市大安區</td><td>財會客製＋系統整合（AMR/AGV自動化倉儲）</td><td class="num">5</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#boquan">柏泉數位創新整合</a><br><a href="https://www.pdc680.com" target="_blank">pdc680.com</a></td><td><span class="pill pill-ready">Ready</span></td><td>高雄市楠梓區</td><td>精品顧問型，廢棄物/營建裝修，接案門檻百萬以上</td><td class="num">6</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#tanjin">碳金國際</a><br><a href="https://bitons.cc" target="_blank">bitons.cc</a></td><td><span class="pill pill-ready">Ready</span></td><td>台北市中正區</td><td>Odoo客製＋本地型LLM部署（AI雙軌訴求）</td><td class="num">3</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#snowman">雪男科技</a><br><a href="https://www.snowmantech.dev" target="_blank">snowmantech.dev</a></td><td><span class="pill pill-ready">Ready</span></td><td>台北市中山區</td><td>醫療/長照數位化，PACS/DICOM影像整合</td><td class="num">2</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+<tr><td><a href="#mingtak">銘啟科技</a><br><a href="https://mingtak.com.tw" target="_blank">mingtak.com.tw</a></td><td><span class="pill pill-ready">Ready</span></td><td>桃園市八德區</td><td>客製應用開發（課程/競賽/看板），非傳統ERP模組</td><td class="num">1</td><td class="num">1</td><td>在營，Odoo 明確（官網本身用Odoo架設）</td></tr>
+<tr><td><a href="#unima">凱渥科技<br>Unima</a><br><a href="https://www.unima.com.tw" target="_blank">unima.com.tw</a></td><td><span class="pill pill-ready">Ready</span></td><td>新北市中和區</td><td>AI決策顧問，官網技術棧錨定鼎新/SAP/Oracle，未提Odoo</td><td class="num">6</td><td class="num">0</td><td>在營但未主打Odoo</td></tr>
+<tr><td><a href="#escent">愛森科技<br>Escent</a><br><a href="http://www.escent.com.tw" target="_blank">escent.com.tw</a></td><td><span class="pill pill-ready">Ready</span></td><td>新北市汐止區</td><td>官網為佔位頁，僅官方自述電商/客製能力</td><td class="num">0</td><td class="num">0</td><td>形同未開站（GoDaddy Coming Soon）</td></tr>
+<tr><td><a href="#wisphere">睿星智宇<br>Wisphere</a><br><a href="https://wisphere.com.tw" target="_blank">wisphere.com.tw</a></td><td><span class="pill pill-ready">Ready</span></td><td>台北市中正區</td><td>顧問方法論導向，醫療大健康/長照/房地產</td><td class="num">0</td><td class="num">0</td><td>在營但官網全文無「Odoo」字樣</td></tr>
+<tr><td><a href="#richsoda">睿軒有限公司</a><br><a href="https://richsoda.com" target="_blank">richsoda.com</a></td><td><span class="pill pill-ready">Ready</span></td><td>台北市中正區</td><td>電商/零售財會客製，金流物流串接</td><td class="num">7</td><td class="num">未公開</td><td>在營，Odoo 明確</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>16 家逐家分析卡</h2>
+<p class="meta" style="margin-bottom:20px;">標記 <span class="pill pill-deep">深查</span> 的 5 家（一隅數位、Bankersrounding、AWT System、艾創點數位、NC Design）為本次重點深查對象，案例資訊列出全部筆數；其餘 11 家案例同樣逐項列出 Odoo 官方名錄公開的完整清單。</p>
+
+<div class="cards">
+
+<!-- 1. 一隅數位 -->
+<article class="card deep" id="corner-digit">
+  <div class="card-head"><h3>一隅數位有限公司 Corner Digit Ltd.</h3><span class="pill pill-silver">Silver</span><span class="pill pill-deep">深查</span></div>
+  <div class="card-sub">新竹市北區四維路130號9樓之6（907室）　｜　<a href="https://www.cornerdigit.com" target="_blank">cornerdigit.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">3 位（v19×2／v18×1）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">100%</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">20 筆（9筆附詳情）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，中英雙語，更新頻繁</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">CEO 為 Wu Yi-Yung，核心團隊來自科技業、會計事務所、金融科技新創、國際認證機構，成員持有 ERP規劃師、ISO 27001稽核員、CompTIA Security+ 等認證。官網自稱「台灣首間 Odoo 18 認證合作夥伴」（官方單方宣稱，未見第三方佐證）。定位為台灣中小企業數位轉型夥伴。成立年份、統一編號、資本額、精確團隊人數官網與商工登記公示資料查詢均未查得，需確認，建議正式合作前致電 +886 3-522-1070 核實。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">Odoo ERP 導入與客製化（銷售/採購/庫存/生產/會計/人資）；企業系統整合，擅串接 ECPay 綠界金流/物流；Google Cloud Platform 部署（Cloud Run、Cloud SQL）＋ Google Workspace/BigQuery 整合；跨平台 App 開發（iOS/Android/IoT/桌面軟體）；官網另設電商/零售/批發三套產業方案頁，以及獨家「MES 系統整合方案」（深度串接 Odoo 與產線 MES）。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">中等偏正面，但深度證據有限。正面：官網三個產業方案頁與 MES 頁一致揭露結構化五階段服務流程（需求訪談→客製方案設計→導入部署→上線+教育訓練→定期維運優化），並標榜「Expert Accounting Consultants」會計顧問角色。保留：MES 頁對客製範圍措辭保守、未揭露工程團隊具體人數與技術審查標準、徵才頁目前無職缺。整體屬於「有把關流程但工程縱深待驗證」的中小型精品夥伴，適合中小企業標準導入＋輕度客製，重度客製前建議先索取工程團隊履歷與同類案例。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（20 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組／內容</th><th>備註</th></tr></thead><tbody>
+      <tr><td>Champion Produce Inc</td><td>Wholesale/Retail（美國加州蔬菜批發）</td><td>採購、庫存、銷售、會計、薪酬＋客製表單</td><td>與當地農場合作，即時追蹤庫存與應收付帳款</td></tr>
+      <tr><td>Modernity Financial Technologies（MaiCoin集團）</td><td>IT/Communication/Marketing</td><td>CRM，串接既有行銷/業務/會計系統</td><td>台灣交易量領先之數位資產品牌，用戶逾百萬</td></tr>
+      <tr><td>典凡科技股份有限公司</td><td>IT/Communication/Marketing</td><td>採購、庫存、銷售、會計、出勤＋本地化模組</td><td>掌控派駐人員出勤與工時，管理專案資源</td></tr>
+      <tr><td>新竹生醫產業及育成中心</td><td>未標示</td><td>銷售、CRM、會計＋客製會員/預約管理</td><td>打造會員制共享空間管理系統</td></tr>
+      <tr><td>普拉米達正韓服飾（Pura Vida）</td><td>Wholesale/Retail（蝦皮女裝）</td><td>電商、採購、庫存、銷售、會計、薪酬、金流、物流</td><td>近2萬粉絲，架設自有電商站擺脫平台依賴</td></tr>
+      <tr><td>瀚璟企業有限公司</td><td>Other Services（周邊商品開發）</td><td>採購、庫存、銷售、會計、專案管理＋客製表單</td><td>與國際咖啡品牌、職棒/職籃、WBC等合作開發周邊</td></tr>
+      <tr><td>花重生科美有限公司（renewig）</td><td>Other Services（真髮訂製）</td><td>POS、電商、採購、庫存、銷售、會計、金流</td><td>為落髮男性提供真髮訂製，整合POS及金流</td></tr>
+      <tr><td>蘋果芽數位科技（橘子蘋果程式學苑）</td><td>IT/Communication/Marketing</td><td>採購、庫存、銷售、會計</td><td>串接既有POS/金流/簽核系統，解決資料分散</td></tr>
+      <tr><td>金佑工業股份有限公司</td><td>Manufacturing/Maintenance</td><td>未標示</td><td>機車與自行車金屬零件供應商</td></tr>
+      <tr><td>Brilliant Summit Co., Ltd.</td><td>Wholesale/Retail</td><td>未標示</td><td>僅列客戶名稱，無案例敘述</td></tr>
+      <tr><td>CENTRAL TEAM GLOBAL COMPANY LIMITED</td><td>未標示</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>Kronos Asset Management</td><td>Finance/Legal/Insurance</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>NOGLE GLOBAL PTE. LTD.</td><td>NGO</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>寶嘉生物科技有限公司</td><td>未標示</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>工業技術研究院（William Wei）</td><td>Government</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>工業技術研究院（朱宣翰）</td><td>Other Services</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>新達科技股份有限公司</td><td>未標示</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>財團法人食品工業發展研究所</td><td>未標示</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>邁世國際瑞星股份有限公司</td><td>Manufacturing/Maintenance</td><td>未標示</td><td>無案例敘述</td></tr>
+      <tr><td>邁世泰克台灣股份有限公司</td><td>Manufacturing/Maintenance</td><td>未標示</td><td>無案例敘述</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 成立時間／統編／團隊人數未查得，標「需確認」。2) 「台灣首間 Odoo 18 認證合作夥伴」為官網單方宣稱，未見第三方佐證。3) 20 References 中僅 9 筆附具體案例敘述，其餘 11 筆僅列客戶名＋部分產業別，屬 Odoo 官方 reference 制度常態非刻意隱匿。4) MES 頁對客製深度措辭保守，重度客製前建議索取工程師名單與同類案例。5) 認證專家3位、滿意度100%、20 References 已用 firecrawl 直抓官方頁面原始徽章文字驗證，與已知線索吻合。</div></section>
+  <details class="src"><summary>資料來源（8 則）</summary><ul>
+    <li>odoo.com/partners/一隅數位有限公司-12375048?country_id=218</li>
+    <li>odoo.com/partners/country/taiwan-218</li>
+    <li>cornerdigit.com（首頁／about-us／mes-integration／wholesale-solution／jobs／en/about-odoo）</li>
+  </ul></details>
+</article>
+
+<!-- 2. Bankersrounding -->
+<article class="card deep" id="bankersrounding">
+  <div class="card-head"><h3>Bankersrounding（肆捨陸入有限公司）</h3><span class="pill pill-silver">Silver</span><span class="pill pill-deep">深查</span></div>
+  <div class="card-sub">台北市中正區南昌路一段54巷18號（另稱台北/台中/高雄均有駐點顧問）　｜　<a href="https://bankersrounding.com" target="_blank">bankersrounding.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">3 位（v19×2／v18×1）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">87%</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">17 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，中英雙版</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">法定名稱「肆捨陸入有限公司」，統編93365855，2023-04-12設立，資本額新台幣100萬元。代表人姓名兩查證來源不一致（顏莛洋／顏旻洋），正式合作前建議以商工登記公示資料再核對。營業項目含軟體零售、投資顧問、管理顧問、資訊軟體服務等，同時具「顧問」與「軟體服務」雙資格。成立至今約3年4個月，屬單一負責人、資本額百萬等級的微型顧問公司。官網自稱團隊「10年以上實務經驗」應指個別顧問資歷而非公司年數。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">17個官方案例中 Food/Hospitality/Tourism/Beverage 佔6件（約35%，最大宗）、Wholesale/Retail 3件、Finance/Legal/Insurance 1件，其餘各1件。近半案例明確寫出「客製會計模組結合本地化營業稅開發」，另有POS API前端串接（連鎖餐飲多店）、Shopline電商整合、專案利潤分析、人資本地化客製。<strong>「寬居設計」與「而然設計 Ecru Studio」兩件與如菓所屬室內裝修/系統家具產業高度相關</strong>，可作同業口碑查證對象。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">具備一定程度客製開發／顧問把關能力，非純軟體轉售商：法規登記同時涵蓋管理顧問與資訊軟體服務雙資格；案例描述大量出現「客製XX模組」「本地化營業稅開發」「符合設計師報價模式」等具體客製字眼；服務對象含連鎖餐飲（中央廚房規劃）、系統家具（寬居設計、鼎沐國際）等需客製報價邏輯的產業，與如菓工程屬性接近。保留：公司規模小（單一負責人、資本額百萬、成立僅3年多）、認證專家僅3人，官網未寫明工程師/顧問人數配置與維運保固SLA，建議面談時直接問實際專案team size與維運保固條款。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（17 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組／內容</th><th>備註</th></tr></thead><tbody>
+      <tr><td>DAISY HOUSE FOOD CO., LTD.（雛菊餐飲）</td><td>Food/Hospitality/Tourism/Beverage</td><td>POS API串接、採購、庫存、客製會計、本地化營業稅（規劃中央廚房/人資）</td><td>五間直營店，義式料理與創意甜點</td></tr>
+      <tr><td>寬居設計</td><td>Construction &amp; Renovation</td><td>客製銷售模組（設計師報價模式）、採購、庫存、客製會計、本地化營業稅</td><td>系統櫥櫃原廠直營；與如菓同業高度相關</td></tr>
+      <tr><td>而然設計有限公司（Ecru Studio）</td><td>Other Services</td><td>未詳述</td><td>台北室內設計工作室，2018創立，極簡風格</td></tr>
+      <tr><td>鼎沐國際股份有限公司</td><td>未標示</td><td>銷售、採購、庫存、文件、費用、會計本地化、人資本地化客製</td><td>系統傢俱產業</td></tr>
+      <tr><td>鯤鯤餐飲股份有限公司</td><td>Food/Hospitality/Tourism/Beverage</td><td>POS API串接、採購、庫存、客製會計、本地化營業稅</td><td>酸菜魚連鎖加盟餐飲</td></tr>
+      <tr><td>MUME Restaurant Group Limited（MMHG）</td><td>Food/Hospitality/Tourism/Beverage</td><td>未詳述</td><td>林泉領軍米其林等級餐飲集團，多品牌多國</td></tr>
+      <tr><td>NORM Patisserie 日式費南雪專門</td><td>未標示</td><td>銷售、採購、庫存、客製會計、本地化營業稅</td><td>法式費南雪蛋糕專賣店</td></tr>
+      <tr><td>蒔二股份有限公司（James）</td><td>Food/Hospitality/Tourism/Beverage</td><td>銷售、採購、庫存、客製會計、本地化營業稅</td><td>案例文字與NORM Patisserie近乎相同，疑同品牌重複列示</td></tr>
+      <tr><td>香色有限公司 Xiang Se</td><td>Food/Hospitality/Tourism/Beverage</td><td>會計系統、庫存（成本）管理</td><td>台北城南餐廳，古董古件改造老宅</td></tr>
+      <tr><td>睦迪餐飲股份有限公司</td><td>Food/Hospitality/Tourism/Beverage</td><td>未詳述</td><td>連鎖餐飲業，僅列公司名</td></tr>
+      <tr><td>FLYTECH TECHNOLOGY（Berry AI）</td><td>Wholesale/Retail</td><td>銷售、採購、費用管理、會計、庫存</td><td>飛捷科技轉投資AI影像新創子公司</td></tr>
+      <tr><td>儷昕有限公司（aeom）</td><td>Wholesale/Retail</td><td>Shopline電商整合、銷售系統、訂單自動同步ERP</td><td>極簡設計服飾品牌</td></tr>
+      <tr><td>帆晴股份有限公司</td><td>未標示</td><td>未詳述</td><td>僅列公司名，資訊不全</td></tr>
+      <tr><td>CMSS Limited</td><td>Finance/Legal/Insurance</td><td>未詳述</td><td>MADNESS男裝品牌前身，未列模組</td></tr>
+      <tr><td>IMAG Marketing Co., LTD.</td><td>IT/Communication/Marketing</td><td>銷售（專案合約）、採購、會計、專案利潤分析、費用管理</td><td>LINE OA為核心之Mar-Tech公司，跨曼谷東京</td></tr>
+      <tr><td>康杏生醫股份有限公司</td><td>Health/Social Welfare/Pharmaceutical</td><td>未詳述</td><td>營養補充品/保養品/寵物周邊</td></tr>
+      <tr><td>日昌鋁業有限公司</td><td>Manufacturing/Maintenance</td><td>未詳述</td><td>僅列公司名，資訊不全</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 代表人姓名兩來源不一致，簽約前務必核對。2) NORM Patisserie與「蒔二股份有限公司」案例文字幾乎相同，疑同品牌重複計入，實際獨立客戶數可能略少於17。3) 帆晴、日昌鋁業、睦迪餐飲三案例僅列公司名無敘述，無法判斷導入深度。4) 官網「10年以上經驗」與公司登記僅3年多有落差，建議面談時請對方說明。5) 認證專家與滿意度取自名錄列表頁夥伴卡片，個別profile頁本身不顯示此徽章，需一併查核。</div></section>
+  <details class="src"><summary>資料來源（9 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218</li>
+    <li>odoo.com/partners/bankersrounding-9931651?country_id=218</li>
+    <li>bankersrounding.com（及 /en）</li>
+    <li>odoo.com/customers/daisy-house-food-co-ltd-10084113、寬居設計、mume-restaurant-group-limited</li>
+    <li>company.g0v.ronny.tw 搜尋摘要；gcis.nat.gov.tw 開放資料</li>
+  </ul></details>
+</article>
+
+<!-- 3. AWT System -->
+<article class="card deep" id="awt-system">
+  <div class="card-head"><h3>AWT System Ltd.</h3><span class="pill pill-silver">Silver</span><span class="pill pill-deep">深查</span></div>
+  <div class="card-sub">台北市中山區長春路328號5樓之2（104）　｜　<a href="https://www.awt-system.com.tw" target="_blank">awt-system.com.tw</a>（請用 www 版本）</div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">11 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營（裸網域曾522逾時）</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">1986年成立，總部台北市中山區，在香港/馬來西亞/新加坡/台灣/中國五地設分公司，服務另涵蓋柬埔寨/印尼/澳洲。官方自稱累計300+專案、200+企業客戶、銷售逾10萬使用者、專案完成率99%、獲獎5次。官網About Us揭露：「2020年加入Odoo成為Partner，同年簽約香港翠華集團實施Odoo ERP」——即做Odoo約5-6年資歷，本業則是深耕近40年的媒體/出版/系統整合軟體商（自研xMedia全媒體平台、電視排播系統）。團隊規模僅稱「數十位開發工程師」，無精確人數；商工登記資料因防爬蟲擋下未查得，需人工查證。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">產業涵蓋批發零售（Amway/日用品電商）、製造/維護（制服供應商、電力配電設備商含台積電對接）、玩具零售、教育（美國學校）、食品飲料（精釀啤酒）、IT/廣告代理/售票平台、觀光旅遊。模組廣度：進銷存、財會（含跨國電子發票）、CRM、PLM、QC品管、製造生產、專案管理、電商（TikTok/蝦皮串接）、人資/EIP/表單、供應鏈、金流串接（國泰銀行）。強項明顯偏「大量客製化＋系統整合」，非單純模組安裝型夥伴。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">評估為有明確工程/客製把關能力：(1) 官網正式列出系統整合、客製開發、顧問服務、工程實施、培訓五大類，非僅轉售授權；(2) 案例多強調深度客製與系統整合，如「Amway全台最大售後服務系統，整合超過10個外部系統」「捨得企業運用AWT BPM搭配大量客製，整合銷售/PLM/QC/專案/製造及與台積電對接」；(3) 本業起家於自研軟體，具原生軟體工程開發團隊；(4) 服務橫跨五國，暗示有跨國專案交付組織。惟官網未揭露具體工程師人數與資歷、Odoo官方profile也未附認證專家數與滿意度佐證，建議洽談時直接索取以交叉驗證。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（11 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組／內容</th><th>備註</th></tr></thead><tbody>
+      <tr><td>AMWAY TAIWAN（安麗台灣）</td><td>批發/零售（直銷）</td><td>客製化、系統整合</td><td>全台最大售後服務系統，整合逾10個外部系統</td></tr>
+      <tr><td>NICE DAILY NECESSITIES MALAYSIA（妙管家馬來西亞）</td><td>批發/零售（日用品）</td><td>進銷存、電商整合</td><td>TikTok/蝦皮電商前台，結合Seadocker/Best倉儲，串接馬來西亞電子發票</td></tr>
+      <tr><td>SFA ASIA LIMITED</td><td>製造/維護（制服供應商）</td><td>線上預約、網站、進銷存、製造、財務</td><td>香港制服供應商，客戶含航空/酒店/賭場/主題公園</td></tr>
+      <tr><td>Sunrich Toys &amp; Hobby</td><td>玩具零售（美國加州模型車經銷）</td><td>PLM、專案管理、QC、製造</td><td>結合客製化PLM等組成完整ERP方案</td></tr>
+      <tr><td>TAOMARU CO PTE. LTD</td><td>批發/零售（NMN保健食品）</td><td>進銷存、財務、折扣、會員計畫、網站、電商</td><td>結合Odoo及訂製開發</td></tr>
+      <tr><td>Taipei American School（台北美國學校）</td><td>教育</td><td>客製Family、Smart Card、系統整合</td><td>整合Koish、POS等，逾2,500名學生</td></tr>
+      <tr><td>UGLY HALF 酉鬼啤酒（台灣谷季）</td><td>製造/食品飲料（精釀啤酒）</td><td>進銷存、供應鏈、財務、銷售分析、製造、專案管理、CRM、訂貨App</td><td>涵蓋連鎖餐廳/食品製造批發/研發/行銷多家公司</td></tr>
+      <tr><td>傑思‧愛德威媒體股份有限公司</td><td>IT/通訊/行銷（日商台灣據點）</td><td>財務系統、系統整合</td><td>API串接與大量客製，可匯出分錄至總部會計系統</td></tr>
+      <tr><td>捨得企業股份有限公司</td><td>製造/維護（電力配電，代理Square D/ASCO）</td><td>銷售、PLM、QC、專案、製造、系統整合</td><td>客戶含台積電；AWT BPM整合銷售/PLM/QC/專案/製造</td></tr>
+      <tr><td>華娛網路娛樂股份有限公司</td><td>IT/通訊/行銷（線上售票平台）</td><td>人資、ERP、EIP、表單系統、金流整合</td><td>串接國泰銀行等金流</td></tr>
+      <tr><td>飛遊網股份有限公司</td><td>食品/餐飲/觀光/飲料（廉航機票平台）</td><td>行銷客製化、ERP整合</td><td>Marketing客製化整合ERP方案</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 裸網域曾兩度Cloudflare 522逾時，www子網域正常，判斷為DNS設定問題非停業，點連結建議加www。2) Odoo官方profile未顯示認證專家/滿意度徽章，Silver級常見情況非資料缺漏，但無法用官方數字佐證品質。3) 商工登記資料防爬蟲擋下未查得，如需盡調文件建議人工上官方系統核對。4) 「2020年加入Odoo」相對其39年本業資歷是較年輕的Odoo經驗（約5-6年），建議合作前確認其Odoo專職團隊規模，勿被老字號招牌帶偏判斷。</div></section>
+  <details class="src"><summary>資料來源（6 則）</summary><ul>
+    <li>odoo.com/partners/awt-system-ltd-1563110?country_id=218</li>
+    <li>odoo.com/partners/country/taiwan-218</li>
+    <li>awt-system.com.tw（首頁／en／en/about-us／en/website/info）</li>
+  </ul></details>
+</article>
+
+<!-- 4. 艾創點 -->
+<article class="card deep" id="ai-chuang-dian">
+  <div class="card-head"><h3>艾創點數位股份有限公司</h3><span class="pill pill-ready">Ready</span><span class="pill pill-deep">深查</span></div>
+  <div class="card-sub">台中市北區台灣大道二段360號17樓之2（另有新竹竹北分公司）　｜　<a href="https://ideaxpress.biz" target="_blank">ideaxpress.biz</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">12 筆（官網自陳）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">統編60290329，設立日期2017-01-03，代表人吳芷珮（第三方彙整站查得，findbiz官方頁403擋爬蟲未直接核對，建議自行以統編覆核）。台中總公司＋新竹竹北分公司。官網自陳「團隊具20年以上ERP系統導入經驗」，Odoo案例頁另提及「顧問團隊與開發維運團隊共十多人」。持有ISO 27001:2022資安認證＋數位發展部雙重登錄（資訊服務機構＋人工智慧技術服務機構）。定位為同時代理鼎新TIPTOP/T100與Odoo的雙品牌系統整合商，另做MES/機聯網、WMS/SCM、iECO能源管理、AI Multi-Agent方案。官網「關於我們」寫「北屯區」與登記地址「北區」不一致，屬官網筆誤。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">Odoo官方名錄自填專長：Manufacturing/Maintenance。官網另陳服務對象含中小型製造、醫藥生技、流通零售與貿易業。Odoo模組涵蓋官網建置、電商、銷售、採購、財會、人資(HRM)在地化、生產製造(MES)、庫存、專案管理(PM)、跨部門整合，強調「在Odoo開源模型基礎上貼合企業實際流程客製化」，上線週期自陳3–6個月。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">中高。正面：20年ERP導入背景＋雙品牌系統整合商定位，代表具跨系統工程整合能力；官網揭露正式四階段導入方法論（需求盤點診斷→系統設定客製開發→測試教育訓練→上線穩定）；明確自述MES/HRM/PM模組客製化實績；ISO 27001:2022資安認證＋數位部雙重登錄有第三方背書；團隊自陳十多人含顧問＋開發維運雙軌。待驗證缺口：Odoo官方名錄profile頁未顯示認證專家數與滿意度分數；12筆案例僅官網單方列名，無官方名錄References佐證、無逐項產業/模組細節；台中在地案例無法交叉查證。建議要求對方提供2–3筆可具名查證案例（含窗口/時程/模組範圍）。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（12 筆，官網自陳未經第三方查證）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>翊創國際</td><td>需確認</td><td>需確認</td><td>官網 /odooerp 客戶清單僅列公司名，Odoo官方名錄無References佐證</td></tr>
+      <tr><td>康科特</td><td>需確認</td><td>需確認</td><td>同上，官網自陳清單</td></tr>
+      <tr><td>超淨精密</td><td>精密加工（推測）</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>義成工業</td><td>需確認</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>冠今不銹鋼</td><td>金屬加工（推測）</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>翊喬螺絲</td><td>扣件製造（推測）</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>萊峰電機</td><td>電機/能源（另查同名公司，未確認是否同一家）</td><td>需確認</td><td>同上，公司名可能多家同名未比對統編</td></tr>
+      <tr><td>寶珍香</td><td>食品/伴手禮（另查為彰化品牌，非台中）</td><td>需確認</td><td>無法百分百確認是否同一家寶珍香</td></tr>
+      <tr><td>歐立威科技</td><td>需確認</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>台灣好夫曼</td><td>需確認</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>迪托設計</td><td>設計（推測）</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>鴻久科技</td><td>需確認</td><td>需確認</td><td>同上</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 12筆案例僅來自官網自陳，Odoo官方名錄profile頁無References區塊可交叉驗證，NEVER當作已查證案例使用。2) Odoo官方名錄出現兩個相近但不同的profile網址，疑為公司改制（有限→股份有限公司）留下的舊url，兩頁內容比對一致判斷為同一實體，但沿革需人工覆核。3) 官網地址「北屯區」與政府登記「北區」不符，屬官網筆誤。4) Odoo官方頁認證專家/滿意度欄位查無數據，不確定是未達標未公開還是頁面抓取限制。5) 案例清單中常見商號名稱可能有多家同名企業，未逐一比對統編。</div></section>
+  <details class="src"><summary>資料來源（9 則）</summary><ul>
+    <li>ideaxpress.biz（首頁／odooerp／en/about-1）</li>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com 艾創點兩個profile網址</li>
+    <li>twincn.com／info.technews.tw 公司登記摘要；facebook.com/ideaXpressFirst</li>
+  </ul></details>
+</article>
+
+<!-- 5. NC Design -->
+<article class="card deep" id="nc-design">
+  <div class="card-head"><h3>NC Design（恩曦設計有限公司）</h3><span class="pill pill-ready">Ready</span><span class="pill pill-deep">深查</span><span class="pill pill-silver">早期試水（起步中）</span></div>
+  <div class="card-sub">新北市三重區重新路五段609巷20號5樓之2　｜　<a href="https://www.nc-crm.com" target="_blank">nc-crm.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">5 筆（可查證 0）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">主業 Salesforce，2026 年新增 Odoo 線</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">統編54684162，2014年3月19日設立（原負責人邱亞梅，2016年8月起現負責人高仕安），至今逾12年，資本額300萬元（2021年12月由30萬增資），登記董事僅高仕安1人，屬小型顧問公司，無政府標案紀錄。2021年3月遷入現址新北市三重區（此前歷經台北市松山、中山區4次遷址）。所營事業含資訊軟體批發零售、資訊軟體服務業、資料處理服務業、產品設計業。公司本質是Salesforce顧問老店：創辦人Claire邱亞梅推廣Salesforce逾16年，官網4個具名案例研究與6門開課課程全數是Salesforce，Odoo是2026年才新增的產品線。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">Odoo Partner Profile登記產業別：IT/Communication/Marketing。5筆官方案例產業橫跨批發零售、IT、人資顧問、餐飲食品、非營利組織，但案例頁僅列公司名+logo、無模組細節，無法確認實際導入範圍。對外行銷主力仍是Salesforce（Sales Cloud/Service Cloud/Marketing/CTI串接）；Odoo線起步中，尚未見官網揭露具體專長模組定位。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text"><strong>一句話定性：動作真、實績零的Odoo早期試水——剛播種、還沒長出可查證案例。</strong>正面訊號：Odoo官方Ready級Partner profile仍在列；2026/5起徵才並已錄取第一位「Odoo導入工程師/顧問」（面試趣覆核屬實，顯示真有人力投入而非純掛名）；傳團隊已有1位取得Odoo v19認證；已報名參加2026/08台中Odoo Business Show。負面訊號：可查證的Odoo導入案例＝0筆——官方掛的5筆references逐頁僅公司名+logo，無模組無敘事；自架ncdesign.odoo.com仍是未客製化的官方Demo範本（花店情境、假姓名Tony Fred）；Odoo App Store掛0模組；政府標案0件；社群/新聞查無Odoo相關產出；唯一沾到邊的「安永金融科技官網由Odoo驅動」，查證後是安永自己在用Odoo、並非NC Design的導入實績。結論：這是一家Salesforce老店在2026年才起步的Odoo新事業，招募與認證動作屬實，但目前沒有一筆可獨立查證的Odoo導入案例——<strong>建議列入觀察名單，正式合作前務必直接向業者索取可具名查證的Odoo專案清單，勿僅憑Ready標籤判斷</strong>。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（官方掛名 5 筆，可查證 0 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>Habitat for Humanity Hong Kong</td><td>未標示</td><td>未公開（案例頁僅公司名稱與logo）</td><td>唯一非營利組織類案例</td></tr>
+      <tr><td>卓樂科技股份有限公司</td><td>Wholesale/Retail</td><td>未公開</td><td>案例detail頁無細節</td></tr>
+      <tr><td>安永金融科技股份有限公司</td><td>IT/Communication/Marketing</td><td>未公開</td><td>案例detail頁無細節；查證後屬安永自用Odoo，非NC Design導入佐證</td></tr>
+      <tr><td>財富方舟股份有限公司</td><td>HR/Administrative/Consulting</td><td>未公開</td><td>案例detail頁無細節</td></tr>
+      <tr><td>馥甘股份有限公司</td><td>Food/Hospitality/Tourism/Beverage</td><td>未公開</td><td>案例detail頁無細節</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) NC Design是Salesforce顧問老店（創辦人邱亞梅推廣Salesforce逾16年，官網4個具名案例＋6門課程全數是Salesforce），2026年才新增Odoo線，屬早期試水階段——這是官網未主打Odoo、Odoo demo站未客製化的合理背景，不宜直接等同「造假」或「空殼」。2) 2026/5NC Design對外徵才並錄取第一位「Odoo導入工程師/顧問」，經面試趣資訊覆核屬實，顯示團隊確有投入這條線的動作；但招募到位不代表已產出可查證的落地案例。3) Odoo官方名錄5筆references案例頁僅公司名+logo、無模組敘事，目前可查證的Odoo導入案例＝0筆。4) ncdesign.odoo.com仍是未客製化官方Demo範本（花店情境、假姓名Tony Fred），Odoo App Store掛0模組、政府標案0件、社群新聞查無Odoo相關產出。5) 「安永金融科技官網由Odoo驅動」是安永自己在用Odoo，並非NC Design的導入實績佐證，勿混為一談。6) 公司背景查證來自twincn/twfile第三方公司登記資料庫，核心欄位已與Odoo profile、nc-crm.com聯絡頁三方比對一致，但建議正式合作前仍以GCIS官方系統覆核。</div></section>
+  <section><span class="section-label">如何驗真章</span><p class="body-text">窗口：創辦人 Claire 邱亞梅　claire@nc-crm.com　｜　0915-603-319　｜　02-2999-1435。建議直接問三題：①已交付的Odoo案例是哪幾家、各做哪些模組（要講得出具體模組，不能只給公司名）？②Odoo團隊目前幾人、新招的導入工程師/顧問是否已到位、認證進度如何？③官方名錄5筆references的實際導入內容、以及NC Design在其中實際扮演的角色是什麼？答得出具體細節＝真起步，閃躲或答不出來＝仍是充數，建議暫緩合作。</p></section>
+  <details class="src"><summary>資料來源（12 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/nc-design-15830345</li>
+    <li>nc-crm.com（首頁／關於我們／案例分享/mayo）</li>
+    <li>ncdesign.odoo.com（未客製化Demo站）</li>
+    <li>odoo.com/customers（habitat-for-humanity-hong-kong／卓樂科技／安永金融科技）</li>
+    <li>twincn.com；twfile.com 公司登記查詢</li>
+    <li>面試趣（NC Design「Odoo導入工程師/顧問」徵才頁，2026/5起，已錄取）</li>
+    <li>2026台中Odoo Business Show 報名資料</li>
+  </ul></details>
+</article>
+
+<!-- 6. 又一科技 -->
+<article class="card" id="otra">
+  <div class="card-head"><h3>又一科技有限公司 Otra Technology</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">新北市板橋區中山路1段10號11樓　｜　<a href="https://otra-technology.com" target="_blank">otra-technology.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">12 筆（1筆附模組細節）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">統編83038170，設立日期2023-04-13（約2年新創階段），資本額600萬元，代表人周雨婷。地址由第三方彙整站查得（官網本身未揭露），營業項目登記資訊軟體服務業、資料處理服務業、產品設計業、其他顧問服務業等。官網未揭露成立年、團隊人數、成員背景。電話(02)7729-6651。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">官網與Odoo profile均未明確標示單一垂直產業專精；服務涵蓋銷售流程管理、CRM、財務會計、採購、專案管理，並提供Odoo Studio客製開發能力。11筆參考案例橫跨健康/藥品、IT/通訊/行銷、冶金機械製造、批發零售等，屬泛產業通用型導入商。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">具備「基本」工程/客製把關能力，但深度與經驗年資證據有限。正面：官網明確主打「開發客製化系統功能」，且唯一詳載的SMS Group案例含「Odoo Studio客製開發」，顯示確有動手客製化的實作能力。疑慮：官網未列工程師人數或技術背景；Odoo官方profile未顯示認證專家數與滿意度；公司2023-04才設立僅約2年；11筆案例中僅1筆附模組細節，其餘10筆僅列客戶名/產業別。建議洽談時索取更完整案例簡報與工程師資歷佐證。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（12 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th></tr></thead><tbody>
+      <tr><td>SMS Group Co., Ltd.（斯曼西股份有限公司）</td><td>冶金技術/機械製造</td><td>銷售、採購、專案管理、會計、Odoo Studio客製開發</td></tr>
+      <tr><td>A&amp;D SCIENTECH TAIWAN LTD.（ODOO-ADST）</td><td>Health/Social Welfare/Pharmaceutical</td><td>未載</td></tr>
+      <tr><td>GALAXY ACADEMY LTD</td><td>IT/Communication/Marketing</td><td>未載</td></tr>
+      <tr><td>力新國際科技股份有限公司</td><td>IT/Communication/Marketing</td><td>未載</td></tr>
+      <tr><td>協勤資訊有限公司</td><td>IT/Communication/Marketing</td><td>未載</td></tr>
+      <tr><td>喬光股份有限公司</td><td>批發/零售</td><td>未載</td></tr>
+      <tr><td>弘一智能股份有限公司</td><td>IT/Communication/Marketing</td><td>未載</td></tr>
+      <tr><td>彩色球國際股份有限公司</td><td>批發/零售</td><td>未載</td></tr>
+      <tr><td>成鼎電工實業有限公司</td><td>未詳細說明</td><td>未載</td></tr>
+      <tr><td>皮皮邦尼國際有限公司</td><td>未詳細說明</td><td>未載</td></tr>
+      <tr><td>詠鑠生活股份有限公司</td><td>未詳細說明</td><td>未載</td></tr>
+      <tr><td>遠岫科技有限公司</td><td>批發/零售</td><td>未載</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 地址透過第三方彙整站比對商工登記查得，非直接開啟findbiz官方站（403），建議正式合作前人工再核一次。2) Odoo官方profile未顯示認證專家與滿意度兩項關鍵指標。3) 11筆案例中僅SMS Group一筆附完整模組範圍說明，案例證據力偏薄。4) 公司2023-04設立僅約2年，屬新創階段。</div></section>
+  <details class="src"><summary>資料來源（5 則）</summary><ul>
+    <li>otra-technology.com；odoo.com/partners/country/taiwan-218</li>
+    <li>odoo.com/partners/又一科技有限公司-otra-technology-limited-company-16779971</li>
+    <li>info.technews.tw；twincn.com 公司登記摘要</li>
+  </ul></details>
+</article>
+
+<!-- 7. IPRO -->
+<article class="card" id="ipro">
+  <div class="card-head"><h3>IPRO Digital Tech.（中文：IPRO 網際家）</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">新竹縣竹北市嘉豐十一路一段100號10F-1（30273）　｜　<a href="https://www.ipro.tw" target="_blank">ipro.tw</a>（裸網域憑證錯誤，用www）</div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">3 位（皆v19）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">100%</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">7 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">官網未揭露成立年份與員工人數，需確認。定位為「運用IT，創造價值」的企業IT整合服務商，主要業務含RFID解決方案、企業行動化（巡檢/倉儲/資產管理）、Odoo ERP導入、企業e化顧問、IT委外、網站平台。為Odoo Roadshow Taipei 2023獨家贊助商，並主講「如何使用Odoo將業務數位化」專題，顯示在台灣Odoo生態圈有一定投入。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">產業分布：製造/維護4件（最大宗）、IT/通訊/行銷2件、健康/社福/醫藥1件。官網另強調RFID/條碼標籤、行動倉儲、電子發票、生產履歷等在地化擴充模組整合能力。導入模組廣度涵蓋CRM、銷售、採購、倉儲、生產製造(MRP)、財會、人資、專案管理/工時單、技術支援、文件庫/知識庫、核批流程、訂閱(Subscriptions)，並有CAD軟體整合與資料庫遷移實績，顯示中大型專案（Large Project約200 users）技術處理能力。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">具備一定工程/客製把關能力，非純轉售型夥伴：官網明確表述依顧客行業別規劃系統導入計畫；官方案例展現實質系統整合工程能力——為客戶建置「專屬Odoo主機」、「資安防護與資料庫備援還原機制」（君邦生物案）、生產製造端「CAD軟體整合」（行競科技案）、「既有資料庫遷移」（道騰案）；另提供RFID/條碼、行動倉儲、電子發票、生產履歷等擴充模組整合能力。弱項：官網未提供技術團隊組成或QA/測試流程說明，僅3位認證專家規模偏小，7案例中近半缺乏具體模組展開說明。整體屬中高等級可信度，適合中小型製造業/生技/IT業導入，建議直接洽談時要求提供導入方法論文件與客戶可聯繫佐證。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（7 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>TSGC 鴻躉股份有限公司</td><td>Manufacturing/Maintenance</td><td>費用請款、費用攤提、產品分類、產品、會計科目等參數設定；會計傳票/分錄/報表</td><td>2022成立，成大衍生新創，太陽光電板回收設備；IPRO協助建置專屬主機</td></tr>
+      <tr><td>TSGC, Andrew Hung</td><td>Manufacturing/Maintenance</td><td>未公開</td><td>疑似與上一筆TSGC鴻躉為關聯條目</td></tr>
+      <tr><td>XING Mobility Inc. 行競科技</td><td>IT/Communication/Marketing</td><td>銷售、採購、倉庫、生產製造、財會；生產端整合CAD軟體</td><td>2015成立，浸沒式冷卻電池技術；導入Odoo Enterprise多年</td></tr>
+      <tr><td>勁澤科技股份有限公司 T3 INDUSTRIAL</td><td>Manufacturing/Maintenance</td><td>未公開</td><td>僅列產業別，無展開說明</td></tr>
+      <tr><td>君邦生物股份有限公司</td><td>Health/Social Welfare/Pharmaceutical</td><td>銷售、CRM、採購、倉庫、財會、人事、專案管理、工時單、技術支援、文件庫、知識庫、核批</td><td>2021成立，微生物/植物幹細胞發酵原料；建置自有主機含資安防護與備援還原</td></tr>
+      <tr><td>天瑞企業股份有限公司</td><td>IT/Communication/Marketing</td><td>未公開</td><td>僅列產業別，無展開說明</td></tr>
+      <tr><td>道騰有限公司</td><td>Real Estate</td><td>CRM、Sales、Subscriptions、Purchase、Inventory、Project、Accounting</td><td>2015成立於高雄，共享辦公空間業者；雲端主機架設、資料遷移、年度維運</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 官網未揭露成立年份、員工人數、統一編號。2) 裸網域憑證錯誤需用www存取。3) 7筆案例中3筆僅標產業別無展開說明，判斷依據較薄弱。4) 「TSGC鴻躉」與「TSGC, Andrew Hung」疑似同一客戶關聯條目，實質獨立客戶數可能略低於7。5) 滿意度100%與3位認證專家（皆v19）取自odoo.com夥伴列表卡片2026-08-21查證截圖，未來可能更新。6) 官網本身未展示任何客戶案例，交叉驗證管道有限。</div></section>
+  <details class="src"><summary>資料來源（5 則）</summary><ul>
+    <li>ipro.tw（首頁／e-solution/odoo-erp.html／contact-us.html）</li>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/ipro-digital-tech-2866153</li>
+  </ul></details>
+</article>
+
+<!-- 8. CENOQ -->
+<article class="card" id="cenoq">
+  <div class="card-head"><h3>新諾資訊股份有限公司 CENOQ Corporation</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">台北市大安區敦化南路一段205-1100號　｜　<a href="https://www.cenoq.com" target="_blank">cenoq.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">5 筆（2筆附敘述）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">成立於2006年，定位為「Digital Transformation Specialist」軟體諮詢暨開發公司，在中國內地及台灣設有據點，服務涵蓋中國內地、台灣、香港、新加坡企業。官網自述15+年開發客製化經驗、816小時顧問時數、138個模組開發、83個成功案例、37個合作夥伴（公司自述總量指標，非Odoo官方查證數字）。團隊人數官網未揭露。除Odoo外亦提供Commercial PostgreSQL企業資料庫服務、Atlassian Jira代理、自有產品BizNavi。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">官網自述特別在製造業、食品業、團購與電子商務領域具豐富實務經驗；模組涵蓋CRM、銷售、採購、庫存、人事、生產管理、財務、電商、POS等；另有Smart Manufacturing/Industry 4.0（設備聯網、自動補貨、可追溯性、QC、e-Kanban）及PostgreSQL企業資料庫服務。實際查證案例集中在：會計/財務模組客製報表（IT/元宇宙業）、銷售+庫存+生產製造模組整合自動化倉儲（製造業）。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">有基礎工程/客製把關能力，但證據集中在少數案例。①官網明確列出Consulting／Customization／Services／Training四大服務區塊；②北京忠邦源得案例展現實質系統整合工程能力（雙系統API串接、AMR/AGV自動化倉儲整合、主數據管理），非單純安裝標準模組；③另提供Commercial PostgreSQL企業級資料庫服務與Industry 4.0智慧製造方案。但因Odoo官方等級僅Ready、多數案例未展開說明，把關能力的深度與台灣在地工程量能仍待實際訪談或索取更多在地案例佐證。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（5 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>XRSPACE CO. LTD</td><td>IT/Communication/Marketing</td><td>Odoo會計模組（Accounting）</td><td>協助客製模組報表及跨平台資料彙整；2017成立XR/元宇宙科技公司</td></tr>
+      <tr><td>北京忠邦源得科技有限公司</td><td>Manufacturing/Maintenance</td><td>銷售、庫存、生產製造模組</td><td>新式茶飲工作站製造商；整合自動化倉儲(IWS+WMS與AMR/AGV)，雙系統API串接</td></tr>
+      <tr><td>PeakOcean Greenwish Offshore Co.Ltd</td><td>Other Services</td><td>未詳述</td><td>僅列客戶名稱與產業別</td></tr>
+      <tr><td>優迪國際股份有限公司</td><td>Wholesale/Retail</td><td>未詳述</td><td>僅列客戶名稱與產業別</td></tr>
+      <tr><td>連宇股份有限公司</td><td>Manufacturing/Maintenance</td><td>未詳述</td><td>僅列客戶名稱與產業別</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) Odoo等級僅Ready，5筆案例僅2筆附文字案例說明。2) 官方profile頁未顯示認證專家數與滿意度分數欄位（Ready級常態）。3) 官網「83成功案例/138模組開發」為公司自述總量指標，涵蓋範圍可能包含中國內地業務，未逐案列出無法逐筆對照。4) 官網主要以英文版呈現，建議簽約前直接電洽索取台灣在地案例清單。</div></section>
+  <details class="src"><summary>資料來源（5 則）</summary><ul>
+    <li>cenoq.com（及/en、/en/about-us）</li>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/新諾資訊股份有限公司-2262337</li>
+  </ul></details>
+</article>
+
+<!-- 9. 柏泉數位 -->
+<article class="card" id="boquan">
+  <div class="card-head"><h3>柏泉數位創新整合有限公司</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">高雄市楠梓區藍昌路185號　｜　<a href="https://www.pdc680.com" target="_blank">pdc680.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">6 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">統編42817270，2018/4/23設立，代表人陳建鈞，登記地址高雄市楠梓區（多方來源一致；老闆線索所稱「楠梓/大寮矛盾」查無依據，建議向老闆確認出處）。官網自述18+年系統整合經驗、3,000+問題解決案例，團隊成員具會計師執照、SAP FICO認證、Odoo專業認證。定位非單純導入商，明確寫「不是修ERP，而是修復企業的決策神經系統」，聚焦ERP診斷、資料可信度重建、財會本地化與國際合規，屬小型精品顧問整合公司。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">產業：半導體、金屬加工、電子製造、工業扣件、紡織、零售、廢棄物處理/環保、教育服務、租賃業，延伸至營建裝修（金屬帷幕外牆工程公司）。模組專長：財會本地化（合規級，自稱亞太區唯一完整落地案例）、產業別客製模組（地磅系統、實驗室系統、廢棄物申報/清運追蹤、簽核系統、預算管理）、專案管理、進銷存與電子發票整合，單案最高導入30+模組。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">有明確且偏「精品顧問型」的把關機制，官網FAQ白紙黑字寫：(1)不服務軟體開發/資訊業者、顧問服務業、純POS餐飲業；(2)年度IT投資預算未達100萬元建議另尋方案；(3)系統健檢與執行服務分開計價，不提供免費診斷；(4)標榜「資深顧問專業判斷」而非初階人力堆疊；(5)僅提供雲端訂閱式導入維運，不做程式碼買斷。團隊具會計師＋SAP FICO＋Odoo三重認證背景，案例顯示能承接高複雜度產業客製。<strong>屬有清楚篩選門檻與顧問把關文化的中小型精品商</strong>，但把關偏ERP系統/財會流程面，非傳統營建工地工程督導；接案門檻百萬以上，如菓評估前應先確認專案規模是否達其接案門檻。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（6 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>BROADEN WORLDWIDE CO., LTD.</td><td>製造業/設備維護</td><td>20+模組：會計本地化、工單、品質管理、銷售、採購、庫存</td><td>來源：odoo.com官方profile Success Stories區塊</td></tr>
+      <tr><td>承暉精品有限公司</td><td>營建與裝修——金屬帷幕外牆/構件工程，資本額4,400萬，20年+資歷</td><td>10+模組：銷售、採購、庫存、財務、專案管理</td><td>與如菓「營建裝修」關注點最直接相關的案例</td></tr>
+      <tr><td>可威環境資源股份有限公司</td><td>事業廢棄物處理（含醫療廢棄物），資本額10億，可寧衛/威立雅/經濟部合資</td><td>30+模組：實驗室送樣檢測、地磅進廠認證、廢棄物核驗申報、維修工單、預算簽核、銷售採購、會計本地化、電子發票</td><td>官方案例標示為「Odoo亞太區最大all-in-one ERP成功案例之一」</td></tr>
+      <tr><td>聚得環保（股份有限公司）</td><td>廢棄物清運服務，資本額1億</td><td>10+模組：清運任務調度、車輛管理、路線成本追蹤、簽核、銷售採購、庫存、會計本地化</td><td>來源：odoo.com官方profile Success Stories區塊</td></tr>
+      <tr><td>鐿豐資源科技股份有限公司</td><td>營建土石方及廢棄物處理，資本額4.8億</td><td>20+模組：地磅、廢棄物追蹤、庫存整合、申報期限管理、合約管理</td><td>僅見於官網pdc680.com/ref，未見於odoo.com官方名錄，來源層級較低</td></tr>
+      <tr><td>翊創國際企業股份有限公司</td><td>建築扣件製造，資本額6,000萬，外銷歐美澳日東南亞</td><td>未列出模組數，涉及多品項複雜製程、委外加工、多幣別交易</td><td>同樣僅見於官網pdc680.com/ref，來源層級較低</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 老闆給的「楠梓/大寮地址矛盾」查無依據，工商登記與Odoo官方頁一致為楠梓區。2) odoo.com官方profile頁未公開認證專家人數與客戶滿意度數字。3) odoo.com profile頁的案例清單兩次擷取結果不完全一致（頁面分頁或JS載入差異），已如實並列並標明來源層級。4) 該公司自我定位偏「ERP診斷顧問」而非傳統系統整合商，接案門檻對小型客戶不友善，如菓評估前應先確認專案規模。</div></section>
+  <details class="src"><summary>資料來源（10 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/柏泉數位創新整合有限公司-2285371</li>
+    <li>pdc680.com（首頁／ref／faq）</li>
+    <li>odoo.com/customers（cheng-huei-exterior-decoration／可威環境資源）</li>
+    <li>twincn.com；opengovtw.com；aibee.com.tw 公司登記查詢</li>
+  </ul></details>
+</article>
+
+<!-- 10. 碳金國際 -->
+<article class="card" id="tanjin">
+  <div class="card-head"><h3>碳金國際股份有限公司</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">台北市中正區博愛路60號8樓　｜　<a href="https://bitons.cc" target="_blank">bitons.cc</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">3 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">統編83003947，設立日期2023-03-08（第三方查詢站轉載，未直接開啟官方系統核實），代表人陳合勇，與Odoo官方profile地址一致。定位為「Odoo ERP客製化整合＋本地型AI（LLM）部署」雙軌訴求，主打資料安全與地端部署成本控制。官網未揭露成立年份、團隊規模。聯絡窗口max.chen@bitons.cc與代表人陳合勇姓氏不同、名字疑似對應，身分關係需人工核對。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">官方產業分類：Utilities/Energy/Water supply；三則案例橫跨IT/Communication/Marketing（2件）與Manufacturing/Maintenance（1件）。官網揭露服務範圍：①Odoo模組客製開發、系統優化與版本升級、多語言多幣別國際化；②金流整合（信用卡/銀聯卡/Apple Pay/Google Pay/WebATM）；③物流串接（黑貓/超商/Lalamove/PandaGo）；④電子發票；⑤AI應用開發（本地型LLM部署、雲端混合LLM智能客服、OCR、銷售預測）。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">具備一定工程/客製把關能力宣稱，但深度證據偏薄：官網明確列出「模組客製開發」「系統優化與版本升級」「一站式專業服務」，並主打本地型LLM部署（技術含量較高，非制式雲端串接可比）；游客邦案例完整列出9模組導入範圍，顯示至少一案有複雜多模組整合實績。疑慮：3則案例中僅1則列出具體模組清單，另2則（尤其地標網通）文案偏行銷公關語氣缺乏工程細節；官方無認證專家與滿意度佐證；公司成立僅約2.5年，案例累積量少。建議面談時要求提供技術團隊資歷佐證，並確認本地LLM部署是否有實際客戶可查證（3則案例均未提及AI/LLM實際導入紀錄）。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（3 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>HSIAO SUNG NON-OXYGEN CHEMICAL CO.（小嵩無氧化學 O-BUSTER）</td><td>Manufacturing/Maintenance</td><td>未列出具體模組</td><td>1976年台中霧峰創立，脫氧劑/乾燥劑製造，取得美國FDA認證，市佔率80%</td></tr>
+      <tr><td>地標網通股份有限公司</td><td>IT/Communication/Marketing</td><td>「導入Odoo企業版，實現O2O資源無縫整合」，未列模組清單</td><td>近50家門市，服務逾百萬顧客；文案偏行銷語氣，缺工程細節</td></tr>
+      <tr><td>游客邦股份有限公司</td><td>IT/Communication/Marketing</td><td>Website, E-commerce, Sales, Inventory, Purchase, Accounting, HR, CRM, POS, Approval（9模組）</td><td>2014成立，跨境上網流量服務商；唯一列出完整模組範圍者</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) odoo.com profile頁未顯示認證專家與滿意度，與部分同名錄夥伴呈現方式不同。2) 網路搜尋摘要曾出現「客戶保留率83%」字樣，但無法在官方頁面原始擷取文字中找到對應內容，判定為AI摘要幻覺，NEVER採信。3) 公司統編/設立日期/代表人資訊來源為第三方轉載，未直接一手核對，如需正式盡調建議補查。4) 代表人「陳合勇」與聯絡email姓氏不同，如涉合約簽署對象需另行核對。</div></section>
+  <details class="src"><summary>資料來源（7 則）</summary><ul>
+    <li>bitons.cc；odoo.com/partners/country/taiwan-218；odoo.com/partners/碳金國際股份有限公司-14191048</li>
+    <li>odoo.com/customers（小嵩無氧化學／地標網通／游客邦）</li>
+    <li>twincn.com 搜尋摘要（未一手核對）</li>
+  </ul></details>
+</article>
+
+<!-- 11. 雪男科技 -->
+<article class="card" id="snowman">
+  <div class="card-head"><h3>雪男科技股份有限公司（Wisman / Snowman Tech）</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">台北市中山區南京西路10號10樓（10444）　｜　<a href="https://www.snowmantech.dev" target="_blank">snowmantech.dev</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">2 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">官網未列公司成立年份與員工人數，僅宣稱「20+年企業數位整合經驗」——疑似創辦人個人資歷而非公司歷史，查無工商登記資料佐證。定位：Odoo ERP導入顧問（流程盤點、模組評估、客製模組開發、教育訓練、上線後維運）＋醫療AI數位化（輕量級PACS/DICOM影像整合，本機部署符合醫療資料隱私規範）＋客製化開發（Web/App/API/AI大數據），主攻醫療集團、長照機構、連鎖診所、零售門市四大垂直市場，與已知線索「醫療社福」相符。聯絡窗口ken.lin@snowmantech.dev。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">醫療/社福/長照數位化為核心主軸；Odoo ERP全模組導入能力（CRM、銷售、會計、庫存、採購、製造、HR、專案、客服、行銷、文件、AI）；醫療影像客製整合（Orthanc開源PACS伺服器＋OHIF網頁檢視器，達成儀器自動擷取、DICOM格式標準化、跨平台查閱、遠距會診）；客製化Web/App/API/AI開發。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">有一定工程/客製把關描述，但缺第三方數據佐證。正面：官網服務項目明確包含「客製模組開發」「Web/App/API/AI客製化開發」與PACS/DICOM醫療影像整合這類需要實際工程能力的客製專案，並列出完整導入流程（流程盤點→模組評估→客製開發→教育訓練→上線維運）。疑慮：Odoo官方案例僅2筆且無模組明細/導入規模可驗證工程實力；認證專家數與客戶滿意度未公開；官網未揭露團隊人數；屬Ready級最基礎等級。<strong>結論：屬新興/小型技術團隊，在醫療利基市場有明確定位，但目前公開資訊不足以獨立驗證工程/客製把關的實戰深度</strong>，建議合作前直接索取實際導入案例規模數據與團隊履歷。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（2 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>威馬康健國際醫學生技有限公司</td><td>Health/Social Welfare/Pharmaceutical</td><td>未公開</td><td>官方案例頁僅為客戶標誌索引，無詳細案例內容</td></tr>
+      <tr><td>拾憶設計藝術有限公司</td><td>未標示（公司名稱看似設計/創意類，與主打醫療社福定位不完全一致）</td><td>未公開</td><td>同樣僅為索引頁，無案例研究內容可查證</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 認證專家數、客戶滿意度Odoo官方頁面均未顯示欄位，非查不到而是官方頁面本身沒有這兩項數據。2) 官方案例僅2筆且僅為客戶標誌索引頁，無法取得模組範圍、導入規模或成效數據。3) 官網宣稱「20+年經驗」與公司查無登記年份形成落差，建議查證是否為創辦人個人資歷。4) 第二筆案例「拾憶設計藝術」公司名稱看似設計/創意類，與主打定位不完全吻合，需和廠商確認實際性質。5) 未查證工商登記統編、實收資本額、負責人背景。</div></section>
+  <details class="src"><summary>資料來源（5 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/雪男科技股份有限公司-27238622</li>
+    <li>odoo.com/customers（威馬康健國際醫學生技／拾憶設計藝術）</li>
+    <li>snowmantech.dev</li>
+  </ul></details>
+</article>
+
+<!-- 12. 銘啟科技 -->
+<article class="card" id="mingtak">
+  <div class="card-head"><h3>銘啟科技有限公司</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">桃園市八德區桃德路192號（334）　｜　<a href="https://mingtak.com.tw" target="_blank">mingtak.com.tw</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">1 位（v19）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">100%（樣本僅1筆）</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">1 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，網站本身用Odoo架設</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">官網copyright標示「2003~2026」，公司主體早於Odoo生態系存在；但Odoo官方profile自述「自投入Odoo生態系以來累積多年（odoo12~迄今）的開發實戰經驗」，即實際做Odoo約自v12（約2018年）起算。團隊規模、人數官網未揭露。定位偏「Odoo底層＋客製化」雙引擎模式的系統開發商——服務項目8項全部是客製應用（企業數據看板、課程管理系統、雲端筆記書櫃、線上直播教學、專業競賽系統、CRM、企業知識管理、生產進度管理），聚焦教育訓練/知識管理/競賽/看板類客製開發，未見財會、庫存、製造等企業核心模組的具體導入描述。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">教育/競賽/知識管理類客製應用為主，非傳統財會/進銷存/製造導向。具體8項客製系統含企業數據看板（客製Kanban View）、課程管理系統、雲端筆記書櫃、線上直播教學、專業競賽系統（報名/審核/多回合評審）、CRM、企業知識管理、生產進度管理（產線看板/機台排程）。技術路線標榜「Odoo底層＋客製化」雙引擎，強調客製化前端而非標準模組配置。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">中低（偏工程/開發型，顧問式標準導入把關證據薄弱）。正面：官網明確標榜「Odoo底層＋客製化」雙引擎模式，服務項目逐條寫出具體客製化能力，公司自2003年起長期做系統開發、非一人工作室起家。負面：Odoo官方認證專家僅1名、官方案例僅1筆且內容空白，可查證實績極薄；官網未見顧問式導入流程（需求訪談→開發→UAT驗收→上線輔導/SLA）的具體說明；服務聚焦客製應用，未見財會/進銷存/製造等企業核心ERP模組導入實績佐證。綜合：像有工程實力的小型客製開發團隊，但作為「有把關的標準化ERP導入顧問」角色證據不足，建議列觀察／備選，委託前需直接索取近期實際客戶清單與導入流程說明。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（1 筆）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>模組</th><th>備註</th></tr></thead><tbody>
+      <tr><td>Foundation for Culture Immersion（聯絡人 Allan Chen）</td><td>需確認（官方案例頁未公開產業別）</td><td>需確認（案例頁面內容為空）</td><td>Odoo官方profile唯一列出的Reference，官方資料本身揭露不足，非本次查證遺漏</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 官方案例頁面內容本身極簡（僅1筆Reference且無敘述文字），無法佐證實際導入產業/模組深度，需直接向銘啟科技索取近期客戶清單。2) 官網「精選作品」（500+項數位定製案例，如台新銀行文化藝術基金會ARTALKS網站、VAPON Racing等）看起來是一般網站開發/數位行銷作品集，未標示是否為Odoo專案，不宜直接當作Odoo導入案例佐證。3) Average Project僅1 users、Large Project僅~5 users，顯示Odoo專案體量偏小型／個位數使用者規模，與「企業級ERP導入」量體有落差。4) 團隊人數、財報規模、顧問/工程師角色配置官網與Odoo名錄均未揭露。</div></section>
+  <details class="src"><summary>資料來源（5 則）</summary><ul>
+    <li>mingtak.com.tw（首頁／service）</li>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/銘啟科技有限公司-1687909</li>
+    <li>odoo.com/customers/foundation-for-culture-immersion-allan-chen-34284693</li>
+  </ul></details>
+</article>
+
+<!-- 13. 凱渥科技 -->
+<article class="card" id="unima">
+  <div class="card-head"><h3>凱渥科技有限公司（Unima Inc.）</h3><span class="pill pill-ready">Ready</span><span class="pill pill-warn">未主打Odoo</span></div>
+  <div class="card-sub">Odoo名錄地址：新北市中和區景新街467巷32弄15號4樓（官網另寫台北市＋新加坡辦公室，兩處矛盾）　｜　<a href="https://www.unima.com.tw" target="_blank">unima.com.tw</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">0（未顯示）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未顯示</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">6 筆（僅一行客戶名）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營但技術棧未含Odoo</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">創辦人Eric Chiu，15+年ERP顧問經驗，2010年以鼎新、SAP專業規劃起步，2019年正式成立凱渥科技，2022年起佈局新加坡/馬來西亞出海策略，2024年轉型「生成式AI決策領導」，自我定位「中小企業的麥肯錫」。官網未公開團隊人數，僅有創辦人個人經歷。自稱「300+企業顧問案例、100+跨產業聯盟夥伴」（未附可查證明細，屬自報數字）。規模判斷：極可能是創辦人主導＋外部聯盟夥伴網絡的小型顧問行號型態。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">官網自述：ERP進銷存系統規劃（<strong>支援鼎新/SAP/Oracle，未列Odoo</strong>）、HR人資系統整合、CRM、BI數據報表分析、AI決策工具導入、企業出海策略、政府專案對接（補助/標案/合規）。產業經驗涵蓋買賣業、製造業、醫療（藥品通路）、生醫、服飾零售、企業倉儲。在Odoo官方名錄中列出的產業別為「科技製造」與「工程與服務」。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">評估：偏「策略顧問型」而非「工程實施型」，把關能力證據薄弱。正面：創辦人15年ERP顧問資歷，官網服務流程涵蓋需求評估→方案規劃→系統導入→後續維運一站式；亦提供政府專案對接/合規輔導/標案準備等企業級顧問服務。負面：<strong>官網ERP技術棧明確錨定「鼎新、SAP、Oracle」，未列Odoo</strong>，技術把關深度是否延伸到Odoo客製開發存疑；全站找不到工程師/技術顧問團隊名單，客製化與維運把關可能高度依賴外部協作方；Odoo官方名錄無認證專家、無滿意度分數、案例僅為自填一行客戶名。<strong>結論：目前公開資訊不足以佐證其為紮實工程/客製把關能力的Odoo導入夥伴，建議列為「待電訪查證」而非直接信任其官網案例作為Odoo實績背書</strong>。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（6 筆，均未證實與 Odoo 相關）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業</th><th>備註</th></tr></thead><tbody>
+      <tr><td>致茂電子</td><td>科技製造</td><td>官網case-studies另有詳版：年營收280億+集團，2024/10啟動、2025年上線；描述為「整合IoT與數據後台」，未點名系統為Odoo，不排除為鼎新/SAP/Oracle</td></tr>
+      <tr><td>牧德科技</td><td>科技製造</td><td>僅見於Odoo profile客戶名單一行字，官網case-studies未見對應詳版，未證實與Odoo相關</td></tr>
+      <tr><td>威剛科技</td><td>科技製造</td><td>同上；官網有一則「威剛生醫子公司」詳版案例，未寫明是否用Odoo，且是否同一案待確認</td></tr>
+      <tr><td>友達光電</td><td>科技製造</td><td>僅見於客戶名單一行字，無任何細節可查證</td></tr>
+      <tr><td>大陸工程</td><td>工程與服務</td><td>僅見於客戶名單一行字，無細節</td></tr>
+      <tr><td>台灣大車隊</td><td>工程與服務</td><td>僅見於客戶名單一行字，無細節</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 官網自身完全未提及「Odoo」品牌：/solutions頁ERP模組明文寫「支援鼎新、SAP、Oracle」，Odoo不在列。2) Odoo官方名錄「標竿客戶」清單是公司自行填寫的bio文字，非結構化References模組，認證專家/滿意度分數確實「未顯示」。3) 官網case-studies頁6則敘事案例一律泛稱「ERP系統」，無一處點名Odoo，成果數字均為自述無第三方佐證。4) 地址矛盾：Odoo名錄寫新北市中和區，官網頁尾寫台北市＋新加坡辦公室，需以電訪或工商登記核實。5) 團隊規模、Odoo認證顧問人數、實際go-live案例數，官網與Odoo名錄均未揭露。</div></section>
+  <details class="src"><summary>資料來源（6 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/凱渥科技有限公司-27238716</li>
+    <li>unima.com.tw（首頁／about／solutions／case-studies）</li>
+  </ul></details>
+</article>
+
+<!-- 14. 愛森科技 -->
+<article class="card" id="escent">
+  <div class="card-head"><h3>愛森科技有限公司（Escent Technology Co., Ltd.）</h3><span class="pill pill-ready">Ready</span><span class="pill pill-warn">官網為佔位頁</span></div>
+  <div class="card-sub">新北市汐止區福德二路156巷46號15樓　｜　<a href="http://www.escent.com.tw" target="_blank">escent.com.tw</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">0（欄位未顯示）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">0 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">形同未開站</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">工商登記查無直接命中，成立年份/實際規模需確認。依Odoo官方profile自述：團隊「擁有超過13年軟體工程實務經驗」，定位為Odoo官方授權經銷商（Ready等級）。聯絡人鄭奕升（Eason Cheng），電話+886 910 198 938，Email eason@escent.com.tw。員工數/年營收等規模指標無法從公開資料查得。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">依Odoo官方profile自述三大核心服務：1) Odoo ERP導入顧問——流程盤點、模組評估、客製模組開發、教育訓練、上線後維運，涵蓋銷售/採購/庫存/會計與台灣在地化模組；2) 電商系統整合——串接Shopify、蝦皮、momo等平台訂單與Odoo後台；3) 客製化開發——Web系統、API整合、進階庫存、台灣電子發票，標準模組解決約70%需求、剩30%由團隊自行開發。<strong>以上均為自我描述，無第三方案例佐證</strong>。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">從官網（佔位頁，無可判斷內容）完全看不出把關能力。僅能依Odoo官方profile的服務描述文字判斷：文字宣稱涵蓋流程盤點到上線後長期維運，並明言「標準模組解決70%需求，剩下30%由具備工程背景的團隊自行開發」，顯示至少論述上有意識到客製化必要性。但完全沒有：(a)任何公開案例佐證是否真的做過客製開發、(b)認證專家人數佐證團隊技術資格、(c)正常運作的官網可供交叉核對。<strong>綜合判斷：把關能力無法驗證，僅有自我宣稱，證據強度極低，不建議在未經電話/面談實質查核之前視為具備可信賴的把關能力</strong>。呈現樣貌接近剛掛牌、尚未累積實績的極早期夥伴。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單</span>
+    <p class="body-text" style="color:var(--muted);">Odoo 官方 profile 頁面完全未顯示「參考案例(References)」區塊——0 筆，非查不到而是該欄位整個未出現，代表帳號設定極簡、幾乎零經營痕跡。</p>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 官網escent.com.tw實抓為GoDaddy「即將推出(Coming Soon)」佔位頁，僅有Logo、聯絡表單與Copyright © 2026字樣，與Odoo profile自我描述的「13年軟體工程實務經驗」「Odoo官方授權經銷商」形成明顯落差，可信度需大幅打折。2) Odoo官方profile完全未顯示「認證專家」「滿意度」「參考案例」三區塊，代表帳號幾乎零經營痕跡。3) 服務描述文字含具體數字（13年經驗、70%標準/30%客製）為該公司自行填寫、無第三方佐證，NEVER可直接採信。4) 工商登記資料查無命中，公司實際成立時間、資本額、員工規模均無法核實。</div></section>
+  <details class="src"><summary>資料來源（3 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/愛森科技有限公司-28897668</li>
+    <li>escent.com.tw（GoDaddy佔位頁）</li>
+  </ul></details>
+</article>
+
+<!-- 15. 睿星智宇 -->
+<article class="card" id="wisphere">
+  <div class="card-head"><h3>睿星智宇有限公司（Wisphere）</h3><span class="pill pill-ready">Ready</span><span class="pill pill-warn">官網未見Odoo字樣</span></div>
+  <div class="card-sub">台北市中正區博愛路53號3樓　｜　<a href="https://wisphere.com.tw" target="_blank">wisphere.com.tw</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">0（未顯示）</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未提供</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">0 筆</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，但全文無Odoo字樣</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">地址：台北市中正區博愛路53號3樓；電話+886 2 2331 1966；信箱kyven@wisphere.com.tw／contact@work.wisphere.com.tw。成立時間、團隊規模官網未揭露，需確認。定位標語「Where Operations Become System Logic／讓企業的營運，成為系統的執行邏輯」，自創OGS™（Operating Growth System）四階段方法論：①企業診斷（流程/資料/系統/風險/AI就緒度）②流程設計（角色/權限/規則/例外處理）③系統建置（模組配置/串接）④驗證與持續改善。三大服務領域：企業營運系統設計與建構、軟體開發與系統整合（ERP/CRM/API）、AI導入與Agent治理。鎖定產業：醫療與大健康、居家與照護服務、房地產。官網無團隊介紹、無合作夥伴/認證標章展示、無社群媒體連結。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">官網自陳ERP/CRM系統整合、API與跨系統資料流、AI Agent導入與權限治理；鎖定產業為醫療大健康／居家照護／房地產。<strong>但「Odoo」這個字完全不出現在官網文案裡</strong>，實際使用Odoo的深度（Community/Enterprise、哪些模組熟悉）需另外查證，不可只憑Odoo官方名錄的自我登記文字判斷。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">目前證據不足以判定有實質工程/顧問把關能力，需人工面談查證。正面訊號——OGS™方法論敘述完整，特別提到「角色、權限、規則、例外處理、決策機制」設計與「驗證與治理」步驟，顯示至少有顧問思維框架。負面/警訊訊號——(1)官方名錄無任何案例、無認證專家掛牌，活躍度低；(2)官網完全未提「Odoo」，專精程度存疑；(3)官網明白寫著「初步訪談」不包含完整診斷/需求規格/架構設計，屬分階段收費模式；(4)團隊規模、成立年資、實際專案經驗全部未揭露。<strong>結論：定位偏「顧問方法論」導向的小型/新興公司，把關能力目前只有「話術框架」佐證、沒有「實績」佐證</strong>，若考慮合作建議直接約訪談當面問團隊人數、過往專案、QA流程。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單</span>
+    <p class="body-text" style="color:var(--muted);">Odoo 官方名錄無任何公開參考案例可供交叉比對——0 筆，與「無認證專家」同為活躍度低的訊號。</p>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) 官網從未使用「Odoo」一詞，Odoo官方名錄上的公司簡介文字是廠商自行填寫、非官網原文，兩邊定位敘述有落差，Odoo專精深度需另外查證。2) 成立年份、團隊規模、過往專案數量、認證專家數、滿意度分數，官方名錄與官網均未揭露，全部標「需確認」。3) 官網「預約初步訪談」聲明不含完整診斷/規格/架構設計，建議實際洽談時直接索取過往專案佐證與團隊履歷。</div></section>
+  <details class="src"><summary>資料來源（5 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/睿星智宇有限公司-29102768</li>
+    <li>wisphere.com.tw（首頁／services）；wisphere.co/about（301導回同站）</li>
+  </ul></details>
+</article>
+
+<!-- 16. 睿軒 -->
+<article class="card" id="richsoda">
+  <div class="card-head"><h3>睿軒有限公司</h3><span class="pill pill-ready">Ready</span></div>
+  <div class="card-sub">台北市中正區汀州路三段171號6樓（10047）　｜　<a href="https://richsoda.com" target="_blank">richsoda.com</a></div>
+  <div class="factgrid">
+    <div class="fact"><div class="k">認證專家</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">客戶滿意度</div><div class="v">未公開</div></div>
+    <div class="fact"><div class="k">參考案例</div><div class="v">7 筆（logo牆，無展開文字）</div></div>
+    <div class="fact"><div class="k">官網現況</div><div class="v" style="font-size:.85rem;">在營，Odoo明確主打</div></div>
+  </div>
+  <section><span class="section-label">公司背景</span><p class="body-text">官網自述：「Richsoda是一家專精於Odoo ERP導入與客製化的專業顧問公司，擁有超過十年的實務經驗，主要客戶群涵蓋買賣業及製造業」。Odoo官方profile地址台北市中正區汀州路三段171號6樓，與已知地區線索一致。成立年份、團隊規模、顧問／工程師背景頁面官網均未揭露，需確認。</p></section>
+  <section><span class="section-label">專長領域</span><p class="body-text">電商/零售導向的Odoo ERP導入與台灣在地化財會模組開發；具體服務含金物流串接（綠界、智付通、宅配通）、電子發票模組串接、購物車優惠碼客製化、Facebook API/Google Analytics串接、CRM會員關係管理、倉儲管理與外倉串接、進銷存系統。自述主要客群涵蓋買賣業及製造業，但實際展示案例偏零售/電商品牌居多。</p></section>
+  <section><span class="section-label">把關能力評估</span><p class="body-text">官方partner profile自述提供「系統客製化開發：針對產業特性進行彈性調整」與「流程最佳化與顧問服務：整合最佳實務經驗協助企業降低成本並提升競爭力」，文字上有把關/顧問語言。但官網實際服務清單（財會系統、倉儲管理、進銷存、電子發票串接、購物車系統、金物流串接、CRM、社群API串接）偏向電商/零售中小企業的系統串接與客製模組開發，未見專案管理方法論、需求訪談流程、驗收機制等具體工程顧問說明，也無顧問/工程師團隊背景頁佐證資歷。<strong>整體判斷：具備輕量客製化與電商整合能力，較像「電商+ERP系統整合商」而非重工程、大型製造業導入型顧問夥伴</strong>，把關深度需在實際接觸時進一步確認（例如索取需求訪談範本、SOW、驗收流程文件）。</p></section>
+  <section>
+    <span class="section-label">參考案例逐項清單（7 筆，官網合作夥伴案例頁僅列品牌名與logo，Click Here連結均導向同頁錨點無獨立內容）</span>
+    <div class="table-wrap"><table class="cases"><thead><tr><th>客戶</th><th>產業（推測，未經查證）</th><th>備註</th></tr></thead><tbody>
+      <tr><td>健鑫貴金屬</td><td>貴金屬/精品零售（依名稱推測）</td><td>官網僅列客戶名稱與圖片，無實際案例內文</td></tr>
+      <tr><td>Demby</td><td>需確認</td><td>僅有品牌名稱與logo圖片</td></tr>
+      <tr><td>Armoire Studio</td><td>需確認，品牌名稱推測可能為服飾/時尚類</td><td>同上</td></tr>
+      <tr><td>Lynn Dyn</td><td>需確認</td><td>同上</td></tr>
+      <tr><td>激安殿堂</td><td>生活雜貨/量販零售（依品牌知名度推測，需確認是否官方合作或僅授權品牌名稱）</td><td>同上</td></tr>
+      <tr><td>小雅音樂</td><td>樂器/音樂零售（推測）</td><td>同上</td></tr>
+      <tr><td>童顏有機</td><td>有機保養品零售/電商（推測）</td><td>同上</td></tr>
+    </tbody></table></div>
+  </section>
+  <section><span class="section-label">查證疑點與注意事項</span><div class="caveat-box">1) Odoo官方profile頁未顯示認證專家數與客戶滿意度分數，無官方數據佐證技術團隊深度，Ready為入門級別可能未達展示門檻。2) 官網「合作夥伴案例」頁僅列7個客戶名稱與logo圖片，所有連結實際導向同頁錨點、非獨立案例頁，無法查證各案產業別/模組範圍/專案規模，僅能就品牌名稱推測產業。3) 官網自述「主要客戶群涵蓋買賣業及製造業」，但實際展示案例均偏零售/電商性質，未見明確製造業客製化實績佐證，兩者存在落差。4) 官網未揭露成立時間、團隊規模、顧問或工程師背景介紹頁。</div></section>
+  <details class="src"><summary>資料來源（6 則）</summary><ul>
+    <li>odoo.com/partners/country/taiwan-218；odoo.com/partners/睿軒有限公司-1801207</li>
+    <li>richsoda.com（首頁／page/partner／page/aboutus／page/value）</li>
+  </ul></details>
+</article>
+
+</div>
+
+<h2>給如菓／VETO 的解讀</h2>
+
+<div class="verdict-box">
+  <h4>現實選項：無 Gold，把關能力集中在 Silver 3 家＋2 家 Ready 備選</h4>
+  <p class="body-text">台灣 Odoo 官方名錄目前 <strong>沒有一家 Gold 級</strong>，因此「等 Gold 出現才行動」不是務實選項。若以「有明確工程/客製把關能力」為篩選標準，16 家中真正站得住腳的候選只有以下 5 家：</p>
+  <ol class="steps">
+    <li><strong>Silver 3 家（第一輪首選）</strong>——一隅數位、Bankersrounding、AWT System 均有官方認證專家數與滿意度佐證，案例數量最多、細節最完整，屬台灣 Odoo 生態圈相對成熟的一線夥伴。其中 <strong>Bankersrounding</strong> 有「寬居設計」「而然設計」兩筆室內裝修／系統家具同業案例，與如菓／VETO 產業最貼近，建議優先接觸並向這兩家客戶做同業口碑查證；<strong>AWT System</strong> 系統整合與大型客製能力最強（39年老牌、跨國五地據點），適合大型或高複雜度需求；<strong>一隅數位</strong>規模較小但顧問流程與資安意識完整，適合中小型標準導入＋輕度客製。</li>
+    <li><strong>Ready 級 2 家備選（第二輪交叉比較，需先電訪查證）</strong>——艾創點數位（雙品牌鼎新+Odoo系統整合商，20年ERP經驗，台中在地，交通方便）可列入備選，但其12筆案例全部僅官網自陳、無Odoo官方名錄References佐證，接觸前務必先索取2-3筆可具名查證案例。NC Design 的 Odoo 業務真實性存疑（官方掛名網站是未客製化的Demo空殼，官網主業100%是Salesforce），若考慮此家務必先電話確認其實際Odoo專案比重，不宜僅憑Ready標籤判斷。</li>
+    <li><strong>其餘 11 家 Ready 夥伴（暫不列入優先名單）</strong>——普遍呈現「認證專家/滿意度未公開、案例證據力參差」的共同特徵，其中愛森科技（官網為GoDaddy佔位頁）、睿星智宇與凱渥科技（官網全文未見「Odoo」字樣）三家的 Odoo 業務真實性尤其存疑。若日後這批夥伴中有人升到 Silver、或主動提供可查證的實績，可再重新評估。</li>
+  </ol>
+  <h4 style="margin-top:18px;">下一步試辦建議</h4>
+  <ol class="steps">
+    <li><strong>接觸順序</strong>：Bankersrounding（同業案例查證）→ 一隅數位或 AWT System（依專案規模擇一）→ 若需更多比較樣本再補艾創點數位。</li>
+    <li><strong>驗收條件</strong>：面談時要求對方提供（a）實際工程團隊人數與資歷、（b）近1-2年可具名聯繫的客戶案例、（c）客製開發後的維運保固／SLA條款——這三項是本次查證中多數夥伴官網都未揭露的關鍵缺口。</li>
+    <li><strong>停損點</strong>：若對方無法提供上述任一項具體佐證（尤其是可具名聯繫的客戶），或報價明顯偏離同業水準，應暫停深談、轉向下一順位候選，避免把重度客製專案交付給僅有「話術框架」而無「實績」佐證的夥伴。</li>
+  </ol>
+</div>
+
+<div class="disclaimer">
+  <strong>免責與更新提醒：</strong>Odoo 官方合作等級（Silver／Ready／Gold）、認證專家人數、客戶滿意度分數會隨時間變動，本報告數值為 2026-08-21 查證當下截圖／實抓結果。正式委託前請以 <a href="https://www.odoo.com/partners/country/taiwan-218" target="_blank">Odoo 官方名錄即時頁面</a>與各公司官網最新資訊為準，並建議直接電洽核實團隊規模、案例細節與報價。部分公司背景資料（統編、代表人、設立日期）來源為第三方商工登記查詢站轉載而非政府官方系統一手核對，已於各卡片查證疑點欄位逐一註明，正式合約簽署前請以 findbiz.nat.gov.tw 官方系統再次覆核。
+</div>
+
+<footer class="pagefoot">如菓室內裝修｜Odoo 台灣官方合作夥伴深度盤點｜查證日 2026-08-21</footer>
+
+</div>
